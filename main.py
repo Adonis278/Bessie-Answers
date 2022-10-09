@@ -1,5 +1,5 @@
 import json
-
+from fastapi import FastAPI
 import requests
 import speech_recognition as sr
 # from time import ctime
@@ -9,7 +9,7 @@ import speech_recognition as sr
 # import requests, json
 # import pyaudio
 import pyttsx3
-
+app = FastAPI()
 """def listen():
    r = sr.Recognizer()
    with sr.Microphone() as source:
@@ -55,6 +55,7 @@ digital_assistant(s)"""
 r = sr.Recognizer()
 
 
+@app.get("/speech")
 def SpeakText(command):
     voice_id = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0'
     engine = pyttsx3.init()
