@@ -83,7 +83,7 @@ with sr.Microphone() as source2:
         SpeakText("Request Failed; {0}".format(e))"""
 
 
-def operate(t):
+def operate():
     while True:
         with sr.Microphone() as source:
             r.adjust_for_ambient_noise(source, duration=0.25)
@@ -199,5 +199,5 @@ def speak():
     except sr.RequestError as e:
         print("Request Failed; {0}".format(e))
 speak() """
-operate()
+# operate()
 print('Done')
